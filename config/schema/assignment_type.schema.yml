@@ -1,0 +1,12 @@
+iq_publisher.assignment_type.*:
+  type: config_entity
+  label: 'Assignment type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

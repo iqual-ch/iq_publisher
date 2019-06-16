@@ -1,0 +1,11 @@
+entity.assignment.add_form:
+  route_name: entity.assignment.add_page
+  title: 'Add Assignment'
+  appears_on:
+    - entity.assignment.collection
+entity.assignment_type.add_form:
+  route_name: entity.assignment_type.add_form
+  title: 'Add Assignment type'
+  appears_on:
+    - entity.assignment_type.collection
+

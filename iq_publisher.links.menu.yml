@@ -1,0 +1,17 @@
+
+# Assignment menu items definition
+entity.assignment.collection:
+  title: 'Assignment list'
+  route_name: entity.assignment.collection
+  description: 'List Assignment entities'
+  parent: system.admin_content
+  weight: 100
+
+
+# Assignment type menu items definition
+entity.assignment_type.collection:
+  title: 'Assignment type'
+  route_name: entity.assignment_type.collection
+  description: 'List Assignment type (bundles)'
+  parent: system.admin_structure
+  weight: 99

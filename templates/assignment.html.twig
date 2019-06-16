@@ -1,0 +1,31 @@
+{#
+/**
+ * @file assignment.html.twig
+ * Default theme implementation to present Assignment data.
+ *
+ * This template is used when viewing Assignment pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_assignment()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('assignment') }}>
+  <h1>Assignment template</h1>
+  {{content.name}}
+  {{_context.elements['#assignment'].getName() }}
+  {{_context.elements['#assignment'].getMatches() }}
+  {% if content %}
+    {{ content }}
+  {% endif %}
+  <ol>
+    {% for key, value in _context.elements['#assignment']  %}
+    <li>{{ key }}</li>
+    {% endfor %}
+  </ol>
+  </div>

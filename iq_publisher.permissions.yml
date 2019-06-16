@@ -1,0 +1,19 @@
+add assignment entities:
+  title: 'Create new Assignment entities'
+
+administer assignment entities:
+  title: 'Administer Assignment entities'
+  description: 'Allow to access the administration form to configure Assignment entities.'
+  restrict access: true
+
+delete assignment entities:
+  title: 'Delete Assignment entities'
+
+edit assignment entities:
+  title: 'Edit Assignment entities'
+
+view published assignment entities:
+  title: 'View published Assignment entities'
+
+view unpublished assignment entities:
+  title: 'View unpublished Assignment entities'

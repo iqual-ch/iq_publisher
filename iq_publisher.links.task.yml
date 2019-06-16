@@ -1,0 +1,18 @@
+# Assignment routing definition
+
+entity.assignment.canonical:
+  route_name: entity.assignment.canonical
+  base_route: entity.assignment.canonical
+  title: 'View'
+
+entity.assignment.edit_form:
+  route_name: entity.assignment.edit_form
+  base_route: entity.assignment.canonical
+  title: 'Edit'
+
+entity.assignment.delete_form:
+  route_name:  entity.assignment.delete_form
+  base_route:  entity.assignment.canonical
+  title: Delete
+  weight: 10
+
