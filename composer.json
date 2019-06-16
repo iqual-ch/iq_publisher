@@ -6,6 +6,6 @@
   "homepage": "https://www.drupal.org/project/iq_publisher",
   "minimum-stability": "dev",
   "require": {
-
+    "drupal/discoverable_entity_bundle_classes": "*"
   }
 }
