@@ -33,7 +33,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   config_export = {
  *     "id",
  *     "label",
- *   }
+ *   },
  *   links = {
  *     "canonical" = "/admin/structure/assignment_type/{assignment_type}",
  *     "add-form" = "/admin/structure/assignment_type/add",
