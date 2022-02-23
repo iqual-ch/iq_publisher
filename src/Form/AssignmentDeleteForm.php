@@ -2,14 +2,15 @@
 
 namespace Drupal\iq_publisher\Form;
 
-use Drupal\Core\Entity\ContentEntityDeleteForm;
+use Drupal\Core\Entity\ContentEntityConfirmFormBase;
 
 /**
  * Provides a form for deleting Assignment entities.
  *
  * @ingroup iq_publisher
  */
-class AssignmentDeleteForm extends ContentEntityDeleteForm {
+class AssignmentDeleteForm extends ContentEntityConfirmFormBase
+{
 
 
 }
