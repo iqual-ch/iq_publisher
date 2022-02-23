@@ -49,13 +49,13 @@ class AssignmentTypeForm extends EntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the %label Assignment type.', [
+        $this->messenger->addMessage($this->t('Created the %label Assignment type.', [
           '%label' => $assignment_type->label(),
         ]));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the %label Assignment type.', [
+       $this->messenger->addMessage($this->t('Saved the %label Assignment type.', [
           '%label' => $assignment_type->label(),
         ]));
     }

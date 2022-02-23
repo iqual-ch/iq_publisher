@@ -39,11 +39,11 @@ class AssignmentForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        drupal_set_message($this->t('Created the assignment.'));
+        $this->messenger->addMessage($this->t('Created the assignment.'));
         break;
 
       default:
-        drupal_set_message($this->t('Saved the assignment.'));
+        $this->messenger->addMessage($this->t('Saved the assignment.'));
     }
     $node = $form_state->getValue('node');
     $form_state->setRedirect('entity.assignment.add_page', ['node' => $node[0]['target_id']]);
