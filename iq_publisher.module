@@ -5,77 +5,72 @@
  * Contains iq_publisher.module.
  */
 
+use Drupal\Core\Url;
 use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
  */
-function iq_publisher_help($route_name, RouteMatchInterface $route_match)
-{
-    switch ($route_name) {
-        // Main module help for the iq_publisher module.
-        case 'help.page.iq_publisher':
-            $output = '';
-            $output .= '<h3>' . t('About') . '</h3>';
-            $output .= '<p>' . t('iq_publisher') . '</p>';
-            return $output;
+function iq_publisher_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the iq_publisher module.
+    case 'help.page.iq_publisher':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('iq_publisher') . '</p>';
+      return $output;
 
-        default:
-    }
+    default:
+  }
 }
 
 /**
  * Implements hook_theme().
  */
-function iq_publisher_theme()
-{
-    $theme = [];
-    $theme['assignment'] = [
-        'render element' => 'elements',
-        'file' => 'assignment.page.inc',
-        'template' => 'assignment',
-    ];
-    $theme['assignment_content_add_list'] = [
-        'render element' => 'content',
-        'variables' => ['content' => null],
-        'file' => 'assignment.page.inc',
-    ];
-    return $theme;
+function iq_publisher_theme() {
+  $theme = [];
+  $theme['assignment'] = [
+    'render element' => 'elements',
+    'file' => 'assignment.page.inc',
+    'template' => 'assignment',
+  ];
+  $theme['assignment_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'assignment.page.inc',
+  ];
+  return $theme;
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK().
  */
-function iq_publisher_theme_suggestions_assignment(array $variables)
-{
-    $suggestions = [];
-    $entity = $variables['elements']['#assignment'];
-    $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+function iq_publisher_theme_suggestions_assignment(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#assignment'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
 
-    $suggestions[] = 'assignment__' . $sanitized_view_mode;
-    $suggestions[] = 'assignment__' . $entity->bundle();
-    $suggestions[] = 'assignment__' . $entity->bundle() . '__' . $sanitized_view_mode;
-    $suggestions[] = 'assignment__' . $entity->id();
-    $suggestions[] = 'assignment__' . $entity->id() . '__' . $sanitized_view_mode;
-    return $suggestions;
+  $suggestions[] = 'assignment__' . $sanitized_view_mode;
+  $suggestions[] = 'assignment__' . $entity->bundle();
+  $suggestions[] = 'assignment__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'assignment__' . $entity->id();
+  $suggestions[] = 'assignment__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
 }
 
-function iq_publisher_preprocess_entity_add_list(&$variables)
-{
-    foreach ($variables['bundles'] as $bundle_name => $bundle_info) {
-        if ($bundle_name == 'transgourmet_ch' || $bundle_name == 'frischeparadies_ch') {
-            $route_name = "entity.assignment.add_page";
-            $nid = \Drupal::request()->query->get('node');
-            $options = ['absolute' => true];
-            $url = \Drupal\Core\Url::fromRoute($route_name);
-            $url = \Drupal\Core\Url::fromUserInput($url->toString() . '/' . $bundle_name . '?node=' . $nid, $options);
+/**
+ *
+ */
+function iq_publisher_preprocess_entity_add_list(&$variables) {
+  foreach ($variables['bundles'] as $bundle_name => $bundle_info) {
+    if ($bundle_name == 'transgourmet_ch' || $bundle_name == 'frischeparadies_ch') {
+      $route_name = "entity.assignment.add_page";
+      $nid = \Drupal::request()->query->get('node');
+      $options = ['absolute' => TRUE];
+      $url = Url::fromRoute($route_name);
+      $url = Url::fromUserInput($url->toString() . '/' . $bundle_name . '?node=' . $nid, $options);
 
-            // $url = $url->toString();
-            // echo $url . '<br />';
-            // die();
-          $bundle_info['add_link']->setUrl($url);
-            //
-            // print_r();
-        }
+      $bundle_info['add_link']->setUrl($url);
     }
+  }
 }
