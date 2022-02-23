@@ -30,6 +30,10 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *     "label" = "label",
  *     "uuid" = "uuid"
  *   },
+ *   config_export = {
+ *     "id",
+ *     "label",
+ *   }
  *   links = {
  *     "canonical" = "/admin/structure/assignment_type/{assignment_type}",
  *     "add-form" = "/admin/structure/assignment_type/add",
@@ -39,6 +43,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   }
  * )
  */
+
 class AssignmentType extends ConfigEntityBundleBase implements AssignmentTypeInterface {
 
   /**
