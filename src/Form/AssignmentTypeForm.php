@@ -46,19 +46,21 @@ class AssignmentTypeForm extends EntityForm {
   public function save(array $form, FormStateInterface $form_state) {
     $assignment_type = $this->entity;
     $status = $assignment_type->save();
+    if ($this->messenger()) {
+      switch ($status) {
+        case SAVED_NEW:
+          $this->messenger()->addMessage($this->t('Created the %label Assignment type.', [
+            '%label' => $assignment_type->label(),
+          ]));
+          break;
 
-    switch ($status) {
-      case SAVED_NEW:
-        $this->messenger->addMessage($this->t('Created the %label Assignment type.', [
-          '%label' => $assignment_type->label(),
-        ]));
-        break;
-
-      default:
-       $this->messenger->addMessage($this->t('Saved the %label Assignment type.', [
-          '%label' => $assignment_type->label(),
-        ]));
+        default:
+         $this->messenger()->addMessage($this->t('Saved the %label Assignment type.', [
+            '%label' => $assignment_type->label(),
+          ]));
+      }
     }
+
     $form_state->setRedirectUrl($assignment_type->toUrl('collection'));
   }
 
