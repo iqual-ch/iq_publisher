@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Entity;
+namespace Drupal\iq_publisher\Entity;
 
 use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
 
@@ -12,14 +12,14 @@ use Drupal\Core\Config\Entity\ConfigEntityBundleBase;
  *   label = @Translation("Assignment type"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\assignments\AssignmentTypeListBuilder",
+ *     "list_builder" = "Drupal\iq_publisher\AssignmentTypeListBuilder",
  *     "form" = {
- *       "add" = "Drupal\assignments\Form\AssignmentTypeForm",
- *       "edit" = "Drupal\assignments\Form\AssignmentTypeForm",
- *       "delete" = "Drupal\assignments\Form\AssignmentTypeDeleteForm"
+ *       "add" = "Drupal\iq_publisher\Form\AssignmentTypeForm",
+ *       "edit" = "Drupal\iq_publisher\Form\AssignmentTypeForm",
+ *       "delete" = "Drupal\iq_publisher\Form\AssignmentTypeDeleteForm"
  *     },
  *     "route_provider" = {
- *       "html" = "Drupal\assignments\AssignmentTypeHtmlRouteProvider",
+ *       "html" = "Drupal\iq_publisher\AssignmentTypeHtmlRouteProvider",
  *     },
  *   },
  *   config_prefix = "assignment_type",

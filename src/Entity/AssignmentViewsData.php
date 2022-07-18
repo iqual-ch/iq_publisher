@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Entity;
+namespace Drupal\iq_publisher\Entity;
 
 use Drupal\views\EntityViewsData;
 

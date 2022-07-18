@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Form;
+namespace Drupal\iq_publisher\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Class AssignmentSettingsForm.
  *
- * @ingroup assignments
+ * @ingroup iq_publisher
  */
 class AssignmentSettingsForm extends FormBase {
 

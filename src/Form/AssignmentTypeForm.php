@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Form;
+namespace Drupal\iq_publisher\Form;
 
 use Drupal\Core\Entity\EntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -30,7 +30,7 @@ class AssignmentTypeForm extends EntityForm {
       '#type' => 'machine_name',
       '#default_value' => $assignment_type->id(),
       '#machine_name' => [
-        'exists' => '\Drupal\assignments\Entity\AssignmentType::load',
+        'exists' => '\Drupal\iq_publisher\Entity\AssignmentType::load',
       ],
       '#disabled' => !$assignment_type->isNew(),
     ];

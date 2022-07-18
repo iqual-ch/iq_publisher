@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments;
+namespace Drupal\iq_publisher;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
@@ -9,7 +9,7 @@ use Drupal\Core\Link;
 /**
  * Defines a class to build a listing of Assignment entities.
  *
- * @ingroup assignments
+ * @ingroup iq_publisher
  */
 class AssignmentListBuilder extends EntityListBuilder {
 
@@ -27,7 +27,7 @@ class AssignmentListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\assignments\Entity\Assignment */
+    /* @var $entity \Drupal\iq_publisher\Entity\Assignment */
     $row['id'] = $entity->id();
     $row['name'] = Link::createFromRoute(
       $entity->label(),

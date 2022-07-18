@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments;
+namespace Drupal\iq_publisher;
 
 use Drupal\Core\Entity\EntityAccessControlHandler;
 use Drupal\Core\Entity\EntityInterface;
@@ -10,7 +10,7 @@ use Drupal\Core\Access\AccessResult;
 /**
  * Access controller for the Assignment entity.
  *
- * @see \Drupal\assignments\Entity\Assignment.
+ * @see \Drupal\iq_publisher\Entity\Assignment.
  */
 class AssignmentAccessControlHandler extends EntityAccessControlHandler {
 
@@ -18,7 +18,7 @@ class AssignmentAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
-    /** @var \Drupal\assignments\Entity\AssignmentInterface $entity */
+    /** @var \Drupal\iq_publisher\Entity\AssignmentInterface $entity */
     switch ($operation) {
       case 'view':
         if (!$entity->isPublished()) {

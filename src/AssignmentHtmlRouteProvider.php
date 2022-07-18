@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments;
+namespace Drupal\iq_publisher;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;
@@ -43,7 +43,7 @@ class AssignmentHtmlRouteProvider extends AdminHtmlRouteProvider {
       $route = new Route("/admin/structure/{$entity_type->id()}/settings");
       $route
         ->setDefaults([
-          '_form' => 'Drupal\assignments\Form\AssignmentSettingsForm',
+          '_form' => 'Drupal\iq_publisher\Form\AssignmentSettingsForm',
           '_title' => "{$entity_type->getLabel()} settings",
         ])
         ->setRequirement('_permission', $entity_type->getAdminPermission())

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Entity;
+namespace Drupal\iq_publisher\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
@@ -12,27 +12,27 @@ use Drupal\user\UserInterface;
 /**
  * Defines the Assignment entity.
  *
- * @ingroup assignments
+ * @ingroup iq_publisher
  *
  * @ContentEntityType(
  *   id = "assignment",
  *   label = @Translation("Assignment"),
  *   bundle_label = @Translation("Assignment type"),
  *   handlers = {
- *     "storage" = "Drupal\assignments\AssignmentStorage",
+ *     "storage" = "Drupal\iq_publisher\AssignmentStorage",
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\assignments\AssignmentListBuilder",
- *     "views_data" = "Drupal\assignments\Entity\AssignmentViewsData",
+ *     "list_builder" = "Drupal\iq_publisher\AssignmentListBuilder",
+ *     "views_data" = "Drupal\iq_publisher\Entity\AssignmentViewsData",
  *
  *     "form" = {
- *       "default" = "Drupal\assignments\Form\AssignmentForm",
- *       "add" = "Drupal\assignments\Form\AssignmentForm",
- *       "edit" = "Drupal\assignments\Form\AssignmentForm",
- *       "delete" = "Drupal\assignments\Form\AssignmentDeleteForm",
+ *       "default" = "Drupal\iq_publisher\Form\AssignmentForm",
+ *       "add" = "Drupal\iq_publisher\Form\AssignmentForm",
+ *       "edit" = "Drupal\iq_publisher\Form\AssignmentForm",
+ *       "delete" = "Drupal\iq_publisher\Form\AssignmentDeleteForm",
  *     },
- *     "access" = "Drupal\assignments\AssignmentAccessControlHandler",
+ *     "access" = "Drupal\iq_publisher\AssignmentAccessControlHandler",
  *     "route_provider" = {
- *       "html" = "Drupal\assignments\AssignmentHtmlRouteProvider",
+ *       "html" = "Drupal\iq_publisher\AssignmentHtmlRouteProvider",
  *     },
  *   },
  *   base_table = "assignment",

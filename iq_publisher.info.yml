@@ -1,0 +1,8 @@
+name: 'iq_publisher'
+type: module
+description: 'iq_publisher'
+core_version_requirement: ^8.8 || ^9
+package: 'iqual'
+
+dependencies:
+  - discoverable_entity_bundle_classes:discoverable_entity_bundle_classes

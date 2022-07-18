@@ -1,9 +1,11 @@
 {
-  "name": "drupal/assignments",
-  "type": "drupal-module",
-  "description": "assignments",
+  "name": "iqual/iq_publisher",
+  "type": "drupal-custom-module",
+  "description": "iq_publisher",
   "license": "GPL-2.0+",
   "homepage": "https://www.drupal.org/project/iq_publisher",
   "minimum-stability": "dev",
-  "require": {}
+  "require": {
+    "amcgowanca/discoverable_entity_bundle_classes": "dev-9.x-2.x"
+  }
 }

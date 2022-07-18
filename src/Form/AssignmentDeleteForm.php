@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments\Form;
+namespace Drupal\iq_publisher\Form;
 
 use Drupal\Core\Entity\ContentEntityConfirmFormBase;
 use Drupal\Core\Url;
@@ -8,7 +8,7 @@ use Drupal\Core\Url;
 /**
  * Provides a form for deleting Assignment entities.
  *
- * @ingroup assignments
+ * @ingroup iq_publisher
  */
 class AssignmentDeleteForm extends ContentEntityConfirmFormBase {
 

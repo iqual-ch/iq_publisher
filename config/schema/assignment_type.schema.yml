@@ -1,4 +1,4 @@
-assignments.assignment_type.*:
+iq_publisher.assignment_type.*:
   type: config_entity
   label: 'Assignment type config'
   mapping:

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\assignments;
+namespace Drupal\iq_publisher;
 
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\Routing\AdminHtmlRouteProvider;

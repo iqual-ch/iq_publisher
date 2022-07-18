@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains assignments.module.
+ * Contains iq_publisher.module.
  */
 
 use Drupal\Core\Url;
@@ -11,13 +11,13 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function assignments_help($route_name, RouteMatchInterface $route_match) {
+function iq_publisher_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
-    // Main module help for the assignments module.
-    case 'help.page.assignments':
+    // Main module help for the iq_publisher module.
+    case 'help.page.iq_publisher':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('assignments') . '</p>';
+      $output .= '<p>' . t('iq_publisher') . '</p>';
       return $output;
 
     default:
@@ -27,7 +27,7 @@ function assignments_help($route_name, RouteMatchInterface $route_match) {
 /**
  * Implements hook_theme().
  */
-function assignments_theme() {
+function iq_publisher_theme() {
   $theme = [];
   $theme['assignment'] = [
     'render element' => 'elements',
@@ -45,7 +45,7 @@ function assignments_theme() {
 /**
  * Implements hook_theme_suggestions_HOOK().
  */
-function assignments_theme_suggestions_assignment(array $variables) {
+function iq_publisher_theme_suggestions_assignment(array $variables) {
   $suggestions = [];
   $entity = $variables['elements']['#assignment'];
   $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
@@ -61,14 +61,16 @@ function assignments_theme_suggestions_assignment(array $variables) {
 /**
  *
  */
-function assignments_preprocess_entity_add_list(&$variables) {
+function iq_publisher_preprocess_entity_add_list(&$variables) {
   foreach ($variables['bundles'] as $bundle_name => $bundle_info) {
-    $route_name = "entity.assignment.add_page";
-    $nid = \Drupal::request()->query->get('node');
-    $options = ['absolute' => TRUE];
-    $url = Url::fromRoute($route_name);
-    $url = Url::fromUserInput($url->toString() . '/' . $bundle_name . '?node=' . $nid, $options);
+    if ($bundle_name == 'transgourmet_ch' || $bundle_name == 'frischeparadies_ch') {
+      $route_name = "entity.assignment.add_page";
+      $nid = \Drupal::request()->query->get('node');
+      $options = ['absolute' => TRUE];
+      $url = Url::fromRoute($route_name);
+      $url = Url::fromUserInput($url->toString() . '/' . $bundle_name . '?node=' . $nid, $options);
 
-    $bundle_info['add_link']->setUrl($url);
+      $bundle_info['add_link']->setUrl($url);
+    }
   }
 }
