@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iq_publisher\Entity;
+namespace Drupal\assignments\Entity;
 
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
@@ -9,7 +9,7 @@ use Drupal\user\EntityOwnerInterface;
 /**
  * Provides an interface for defining Assignment entities.
  *
- * @ingroup iq_publisher
+ * @ingroup assignments
  */
 interface AssignmentInterface extends ContentEntityInterface, EntityChangedInterface, EntityOwnerInterface {
 
@@ -29,7 +29,7 @@ interface AssignmentInterface extends ContentEntityInterface, EntityChangedInter
    * @param string $name
    *   The Assignment name.
    *
-   * @return \Drupal\iq_publisher\Entity\AssignmentInterface
+   * @return \Drupal\assignments\Entity\AssignmentInterface
    *   The called Assignment entity.
    */
   public function setName($name);
@@ -48,7 +48,7 @@ interface AssignmentInterface extends ContentEntityInterface, EntityChangedInter
    * @param int $timestamp
    *   The Assignment creation timestamp.
    *
-   * @return \Drupal\iq_publisher\Entity\AssignmentInterface
+   * @return \Drupal\assignments\Entity\AssignmentInterface
    *   The called Assignment entity.
    */
   public function setCreatedTime($timestamp);
@@ -69,7 +69,7 @@ interface AssignmentInterface extends ContentEntityInterface, EntityChangedInter
    * @param bool $published
    *   TRUE to set this Assignment to published, FALSE to set it to unpublished.
    *
-   * @return \Drupal\iq_publisher\Entity\AssignmentInterface
+   * @return \Drupal\assignments\Entity\AssignmentInterface
    *   The called Assignment entity.
    */
   public function setPublished($published);

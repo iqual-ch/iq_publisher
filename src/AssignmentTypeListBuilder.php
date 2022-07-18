@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iq_publisher;
+namespace Drupal\assignments;
 
 use Drupal\Core\Config\Entity\ConfigEntityListBuilder;
 use Drupal\Core\Entity\EntityInterface;
