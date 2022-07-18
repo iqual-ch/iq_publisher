@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iq_publisher\Form;
+namespace Drupal\assignments\Form;
 
 use Drupal\Core\Entity\EntityConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;

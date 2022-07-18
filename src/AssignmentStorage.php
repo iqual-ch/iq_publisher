@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iq_publisher;
+namespace Drupal\assignments;
 
 use Drupal\Core\Entity\Sql\SqlContentEntityStorage;
 use Drupal\discoverable_entity_bundle_classes\Storage\SqlContentEntityStorageTrait;

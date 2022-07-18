@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\iq_publisher\Form;
+namespace Drupal\assignments\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
@@ -9,7 +9,7 @@ use Drupal\node\Entity\Node;
 /**
  * Form controller for Assignment edit forms.
  *
- * @ingroup iq_publisher
+ * @ingroup assignments
  */
 class AssignmentForm extends ContentEntityForm {
 
@@ -17,7 +17,7 @@ class AssignmentForm extends ContentEntityForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    /* @var $entity \Drupal\iq_publisher\Entity\Assignment */
+    /* @var $entity \Drupal\assignments\Entity\Assignment */
     $form = parent::buildForm($form, $form_state);
     $nid = \Drupal::request()->query->get('node');
     if (is_numeric($nid) ) {
